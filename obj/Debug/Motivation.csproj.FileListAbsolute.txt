@@ -73,3 +73,4 @@ c:\users\ragnarglor\documents\visual studio 2015\Projects\Motivation\Motivation\
 c:\users\ragnarglor\documents\visual studio 2015\Projects\Motivation\Motivation\bin\EntityFramework.SqlServer.xml
 c:\users\ragnarglor\documents\visual studio 2015\Projects\Motivation\Motivation\obj\Debug\Motivation.Migrations.firstmigration.resources
 c:\users\ragnarglor\documents\visual studio 2015\Projects\Motivation\Motivation\obj\Debug\Motivation.csproj.GenerateResource.Cache
+C:\Users\ragnarglor\documents\visual studio 2015\Projects\Motivation\Motivation\obj\Debug\Motivation.Migrations.secondmigration.resources

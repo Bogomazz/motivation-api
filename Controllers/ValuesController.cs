@@ -1,4 +1,5 @@
-﻿using Motivation.Models;
+﻿using Motivation.Filters;
+using Motivation.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace Motivation.Controllers
     public class ValuesController : ApiController
     {
         // GET api/values
+        [AuthFilter]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };

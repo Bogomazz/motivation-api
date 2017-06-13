@@ -10,19 +10,30 @@ using System.Threading.Tasks;
 using System.Web.Http.Results;
 using System.Security.Principal;
 using Motivation.CC;
+using Motivation.Models;
+using Motivation.DAL.DataServices;
+using Motivation.Models.Service;
 
 namespace Motivation.Filters
 {
     public class AuthFilter: Attribute, IAuthenticationFilter
     {
-        public Task AuthenticateAsync(HttpAuthenticationContext context, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task AuthenticateAsync(HttpAuthenticationContext context, CancellationToken cancellationToken)
         {
             context.Principal = null;
 
             string authToken = context.Request.Headers.GetValues(Common.AuthHeader).FirstOrDefault();
             if(authToken != null)
             {
-                //ToDo: add Principal to context;
+                using(var authService = new AuthService())
+                {
+                    User user = authService.GetUserByToken(authToken);
+                    if (user != null)
+                    {
+                        context.Principal = new Principal(user);
+                    }
+                }
+               
             }
 
             //AuthenticationHeaderValue authentication = context.Request.Headers.Authorization;

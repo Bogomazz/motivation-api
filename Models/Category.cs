@@ -12,6 +12,6 @@ namespace Motivation.Models
         public int Factor { set; get; }
 
         public int? UserId { set; get; }
-        public ICollection<Task> Tasks { set; get; }
+        public ICollection<Issue> Issues { set; get; }
     }
 }
